@@ -40,7 +40,7 @@ public class ClientStats
         this.glicose = glicose;
         this.symptoms = symptoms;
     }
-    public static ClientStats CreatClientStats(int diseaseIndex) 
+    public static ClientStats CreateClientStats(int diseaseIndex) 
     {
         ClientStats cs = new ClientStats();
 		switch (diseaseIndex) 
@@ -129,11 +129,16 @@ public class ClientStats
         }
         return cs;
     }
+
+    public static ClientStats CreateRandomClientStats() 
+    {
+        return CreateClientStats(Random.Range(0, ClientStatsConst.DISEASENAMES.Length));
+    }
 }
 
 public class ClientStatsConst
 {
-    public static string[] DISEASENAMES = { "Doença1", "Doença2", "Doença3", "Doença4" };
+    public static string[] DISEASENAMES = { "Doença 1", "Doença 2", "Doença 3", "Doença 4" };
     
     public static string[] FEMININENAMES = { "Roberta", "Luiza", "Cleide" };
 
