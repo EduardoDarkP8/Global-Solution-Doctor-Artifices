@@ -8,11 +8,15 @@ public class ClientListner : MonoBehaviour
     public event Action<Transform> onClientEnter;
     void Start()
     {
-        onClientEnter.Invoke(transform);
+        ClientEnter();
     }
 
     void Update()
     {
         
+    }
+    public void ClientEnter() 
+    {
+        onClientEnter.Invoke(transform);
     }
 }

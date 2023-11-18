@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 7032466229498515671}
   - component: {fileID: 1280687761685426070}
   - component: {fileID: 279590685718693488}
-  - component: {fileID: 2409636459302453347}
+  - component: {fileID: 8516461891888170755}
   m_Layer: 5
   m_Name: Exame
   m_TagString: Untagged
@@ -1237,9 +1237,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2409636459302453347}
-        m_TargetAssemblyTypeName: ConfirmButton, Assembly-CSharp
-        m_MethodName: confirm
+      - m_Target: {fileID: 8516461891888170755}
+        m_TargetAssemblyTypeName: Exames, Assembly-CSharp
+        m_MethodName: OnExameClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1249,7 +1249,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2409636459302453347
+--- !u!114 &8516461891888170755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1258,11 +1258,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2517910333634778131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8b136ee8e7b60241babcdb153ff345f, type: 3}
+  m_Script: {fileID: 11500000, guid: c5d20d82b231032458ef562f73b0a22b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diseaseDropdownScript: {fileID: 5989519958556951913}
   client: {fileID: 0}
+  checkBoxes:
+  - {fileID: 3604188435839006762}
+  - {fileID: 8161806667414820444}
+  - {fileID: 5996246610283490913}
+  - {fileID: 594194808896126617}
+  - {fileID: 4759715926698939298}
+  - {fileID: 2415405203066339235}
+  - {fileID: 7982672430096995159}
 --- !u!1 &2540485567595226496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,6 +2066,7 @@ MonoBehaviour:
   ficha: {fileID: 1637623086781969117}
   diseaseDropdownScript: {fileID: 5989519958556951913}
   confirmButton: {fileID: 5354414276258891065}
+  exames: {fileID: 8516461891888170755}
 --- !u!1 &4132258607031934029
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,4 +7,5 @@ public class Analyse : MonoBehaviour
     public Ficha ficha;
     public DiseaseDropdownScript diseaseDropdownScript;
     public ConfirmButton confirmButton;
+    public Exames exames;
 }
