@@ -12,30 +12,29 @@ public class Client : MonoBehaviour
     private bool[] activeCamps = new bool[7];
     void Start()
     {
-        if (stats == null) 
-        {
-            stats = ClientStats.CreateRandomClientStats();
-            int n = 0;
-            foreach (bool b in activeCamps) 
-            {
-                int i = Random.Range(0, 3);
-                if (i == 0) 
-                {
-                    activeCamps[n] = false;
-                }
-                else 
-                {
-                    activeCamps[n] = true;
-                }
-                n++;
-            }
-            
-        }
         listner.onClientEnter += Listner_onClientEnter;
-        
+
     }
 
-    private void Listner_onClientEnter(Transform obj)
+    public void AddStats() 
+    {
+        stats = ClientStats.CreateRandomClientStats();
+        int n = 0;
+        foreach (bool b in activeCamps)
+        {
+            int i = Random.Range(0, 3);
+            if (i == 0)
+            {
+                activeCamps[n] = false;
+            }
+            else
+            {
+                activeCamps[n] = true;
+            }
+            n++;
+        }
+    }
+    public void Listner_onClientEnter(Transform obj)
     {
         fichaInstance = Instantiate(fichaTempalte, obj);
         Analyse analyse = fichaInstance.GetComponent<Analyse>();
@@ -45,6 +44,7 @@ public class Client : MonoBehaviour
     }
     public void GoToExames(bool[] newActives,float time) 
     {
+        isWainting = true;
         int i = 0;
 		foreach (bool b in newActives) 
         {
@@ -59,6 +59,9 @@ public class Client : MonoBehaviour
             Destroy(fichaInstance);
         }
         StartCoroutine(Wait(time));
+        ExamQueue.instance.waitingClients.Add(this);
+        QueryQueue.instance.waitingClients.Remove(this);
+        QueryQueue.instance.ListUpdate();
     }
     public void FinishAppointment() 
     {
@@ -67,6 +70,6 @@ public class Client : MonoBehaviour
     IEnumerator Wait(float i) 
     {
         yield return new WaitForSeconds(i);
-        listner.ClientEnter();
+        isWainting = false;
     }
 }

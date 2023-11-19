@@ -7,7 +7,7 @@ public class ExamQueue : MonoBehaviour
     public static ExamQueue instance;
     public List<Client> waitingClients;
     
-    void Start()
+    void Awake()
     {
 		if (instance == null) 
         {
@@ -18,15 +18,18 @@ public class ExamQueue : MonoBehaviour
     public Client LastWaintingClients() 
     {
         Client exit = null;
+		if (waitingClients.Count != 0) 
+        { 
         int i = 0;
 		foreach (Client client in waitingClients) 
         {
-			if (waitingClients.ToArray()[i].isWainting) 
+			if (!waitingClients.ToArray()[i].isWainting) 
             {
                 exit = waitingClients.ToArray()[i];
                 break;
             }
             i++;
+        }
         }
         return exit;
     }

@@ -8,7 +8,7 @@ public class ClientListner : MonoBehaviour
     public event Action<Transform> onClientEnter;
     void Start()
     {
-        ClientEnter();
+
     }
 
     void Update()
