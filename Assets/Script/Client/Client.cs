@@ -6,6 +6,7 @@ public class Client : MonoBehaviour
 {
     public bool isWainting;
     public ClientStats stats;
+    public ClientMovement move;
     public ClientListner listner;
     public GameObject fichaTempalte;
     GameObject fichaInstance;

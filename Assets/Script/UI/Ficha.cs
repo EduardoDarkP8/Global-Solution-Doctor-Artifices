@@ -33,7 +33,7 @@ public class Ficha : MonoBehaviour
         string sintomasText = "";
 		foreach (string sintoma in client.symptoms) 
         {
-            sintomasText += sintoma + ", ";
+            sintomasText += sintoma + " ";
         }
         camp[10].text = sintomasText;
 
