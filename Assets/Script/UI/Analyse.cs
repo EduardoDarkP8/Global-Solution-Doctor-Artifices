@@ -8,4 +8,5 @@ public class Analyse : MonoBehaviour
     public DiseaseDropdownScript diseaseDropdownScript;
     public ConfirmButton confirmButton;
     public Exames exames;
+    public GameManager gm;
 }

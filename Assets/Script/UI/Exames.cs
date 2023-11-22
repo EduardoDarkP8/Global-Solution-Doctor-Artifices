@@ -18,7 +18,7 @@ public class Exames : MonoBehaviour
             checks[i] = checkBoxes[i].isOn;
             if (checks[i]) 
             {
-                finalTime += 1.5f;
+                finalTime += 5.5f;
             }
             i++;
         }

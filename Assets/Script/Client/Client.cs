@@ -9,6 +9,7 @@ public class Client : MonoBehaviour
     public ClientListner listner;
     public GameObject fichaTempalte;
     GameObject fichaInstance;
+    public GameManager gameManager;
     private bool[] activeCamps = new bool[7];
     void Start()
     {
@@ -38,9 +39,12 @@ public class Client : MonoBehaviour
     {
         fichaInstance = Instantiate(fichaTempalte, obj);
         Analyse analyse = fichaInstance.GetComponent<Analyse>();
+        analyse.gm = gameManager;
         analyse.confirmButton.client = this;
+        analyse.confirmButton.gameManager = gameManager;
         analyse.ficha.Show(stats,activeCamps);
         analyse.exames.client = this;
+        
     }
     public void GoToExames(bool[] newActives,float time) 
     {
@@ -65,11 +69,24 @@ public class Client : MonoBehaviour
     }
     public void FinishAppointment() 
     {
-        
+        if (fichaInstance != null)
+        {
+            Destroy(fichaInstance);
+
+        }
+        ConfirmedQueue.instance.confirmdClients.Add(this);
+        QueryQueue.instance.waitingClients.Remove(this);
+        QueryQueue.instance.ListUpdate();
+        ConfirmedQueue.instance.confirmdClients.Remove(this);
+        Destroy(gameObject);
     }
     IEnumerator Wait(float i) 
     {
         yield return new WaitForSeconds(i);
         isWainting = false;
+    }
+	private void OnDestroy()
+	{
+        
     }
 }

@@ -6,11 +6,18 @@ public class ConfirmButton : MonoBehaviour
 {
     [SerializeField] DiseaseDropdownScript diseaseDropdownScript;
     public Client client;
+    public GameManager gameManager;
     public void Confirm() 
     {
         if (diseaseDropdownScript.GetItemText() == client.stats.diseaseName) 
         {
-            Debug.Log("Certo");
+            gameManager.UpdateConfirms(1);
+            client.FinishAppointment();
+        }
+		else 
+        {
+            gameManager.UpdateWrongs(1);
+            client.FinishAppointment();
         }
     }
 }

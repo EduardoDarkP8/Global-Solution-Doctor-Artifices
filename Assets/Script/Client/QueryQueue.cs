@@ -8,6 +8,7 @@ public class QueryQueue : MonoBehaviour
     public List<Client> waitingClients;
     [SerializeField] ClientListner listener;
     public GameObject client;
+    [SerializeField] GameManager gameManager;
     public int queueMax;
 
     void Start()
@@ -27,6 +28,7 @@ public class QueryQueue : MonoBehaviour
                 Client atualInstance = Instantiate(client).GetComponent<Client>();
                 atualInstance.AddStats();
                 atualInstance.listner = listener;
+                atualInstance.gameManager = gameManager;
                 waitingClients.Add(atualInstance);
             }
 			else 
@@ -37,7 +39,10 @@ public class QueryQueue : MonoBehaviour
                 ExamQueue.instance.waitingClients.Remove(selectedClient);
             }
         }
-        waitingClients.ToArray()[0].Listner_onClientEnter(listener.gameObject.transform);
+		if (listener != null) 
+        {
+            waitingClients.ToArray()[0].Listner_onClientEnter(listener.gameObject.transform);
+        }
     }
     // Update is called once per frame
     void Update()
