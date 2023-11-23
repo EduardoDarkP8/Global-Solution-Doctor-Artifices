@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 1136876893173936948}
   - component: {fileID: 1063288957405399032}
   m_Layer: 0
-  m_Name: dooutor  (1)
+  m_Name: ClientBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1037930648, guid: 22db7be0bc35e4d47b415fa6505f553a, type: 3}
+  m_Sprite: {fileID: 55759294, guid: dbb15d534a88f1145bc59a2a38035842, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -209,7 +209,7 @@ Animator:
   m_GameObject: {fileID: 2645894876461594559}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 033d2d8b727a4e347a4c4d393c252523, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

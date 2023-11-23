@@ -58,6 +58,7 @@ public class Client : MonoBehaviour
     IEnumerator EnterRoom(Transform obj)
     {
         move.MoveRoom(true);
+        move.BodyMove(true,true);
         yield return new WaitForSeconds(move.animTime);
         fichaInstance = Instantiate(fichaTempalte, obj);
         Analyse analyse = fichaInstance.GetComponent<Analyse>();
@@ -70,6 +71,7 @@ public class Client : MonoBehaviour
     IEnumerator FinishAppointmentAnim()
     {
         move.MoveRoom(false);
+        move.BodyMove(true, false);
         if (fichaInstance != null)
         {
             Destroy(fichaInstance);
@@ -84,6 +86,7 @@ public class Client : MonoBehaviour
     IEnumerator GoToExamesAnim(bool[] newActives, float time)
     {
         move.MoveRoom(false);
+        move.BodyMove(true, false);
         if (fichaInstance != null)
         {
             Destroy(fichaInstance);

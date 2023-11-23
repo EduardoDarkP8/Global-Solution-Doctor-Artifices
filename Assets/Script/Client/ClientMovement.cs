@@ -15,6 +15,16 @@ public class ClientMovement : MonoBehaviour
     {
         animatorBody.SetBool("Enter", enter);
     }
-    
-    
+    public void BodyMove(bool walking, bool front) 
+    {
+        animatorSprite.SetBool("Front", front);
+        animatorSprite.SetBool("Walking", walking);
+        StartCoroutine(Entering(walking));
+    }
+    IEnumerator Entering(bool walking) 
+    {
+        yield return new WaitForSeconds(animTime);
+        walking = !walking;
+        animatorBody.SetBool("Walking",walking);
+    }
 }
