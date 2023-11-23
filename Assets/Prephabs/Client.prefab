@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWainting: 0
+  move: {fileID: 5135345008275654706}
   listner: {fileID: 0}
   fichaTempalte: {fileID: 3734036284630768838, guid: 73cf35934ac91044c98857030ea93cca, type: 3}
   gameManager: {fileID: 0}
@@ -97,6 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483a7e40e83c638439fcd04af153615c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorBody: {fileID: 1805536741902895537}
+  animatorSprite: {fileID: 1063288957405399032}
+  animTime: 3
 --- !u!1 &2645894876461594559
 GameObject:
   m_ObjectHideFlags: 0

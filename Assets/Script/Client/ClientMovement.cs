@@ -6,7 +6,7 @@ public class ClientMovement : MonoBehaviour
 {
     [SerializeField]Animator animatorBody;
     [SerializeField]Animator animatorSprite;
-    public float AnimTime;
+    public float animTime;
     void Start()
     {
         

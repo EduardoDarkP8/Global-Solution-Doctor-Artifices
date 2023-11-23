@@ -12,7 +12,7 @@ public class DiseaseDropdownScript : MonoBehaviour
     void Start()
     {
         dpd.AddOptions(ClientStatsConst.DISEASENAMES.ToList<string>());
-        
+        onChange();
     }
     public string GetItemText() 
     {
@@ -22,12 +22,12 @@ public class DiseaseDropdownScript : MonoBehaviour
     {
         int i = dpd.value;
         text[0].text = ClientStatsConst.DISEASENAMES[i];
-        text[1].text = MinMaxStat(ClientStatsConst.ZMOLEC[i].min.ToString(), 
-                                  ClientStatsConst.ZMOLEC[i].max.ToString());
-        text[2].text = MinMaxStat(ClientStatsConst.XHORMONIO[i].min.ToString(),
+        text[1].text = MinMaxStat(ClientStatsConst.XHORMONIO[i].min.ToString(), 
                                   ClientStatsConst.XHORMONIO[i].max.ToString());
-        text[3].text = MinMaxStat(ClientStatsConst.YLIPIDIO[i].min.ToString(),
+        text[2].text = MinMaxStat(ClientStatsConst.YLIPIDIO[i].min.ToString(),
                                   ClientStatsConst.YLIPIDIO[i].max.ToString());
+        text[3].text = MinMaxStat(ClientStatsConst.ZMOLEC[i].min.ToString(),
+                                  ClientStatsConst.ZMOLEC[i].max.ToString());
         text[4].text = MinMaxStat(ClientStatsConst.CARDIACFRENQUENCY[i].min.ToString(),
                                   ClientStatsConst.CARDIACFRENQUENCY[i].max.ToString());
         text[5].text = MinMaxStat(ClientStatsConst.GASES[i].min.ToString(),

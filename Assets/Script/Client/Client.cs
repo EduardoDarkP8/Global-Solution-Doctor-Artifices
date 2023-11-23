@@ -18,7 +18,7 @@ public class Client : MonoBehaviour
 
     }
 
-    public void AddStats() 
+    public void AddStats()
     {
         stats = ClientStats.CreateRandomClientStats();
         int n = 0;
@@ -38,56 +38,70 @@ public class Client : MonoBehaviour
     }
     public void Listner_onClientEnter(Transform obj)
     {
+
+        StartCoroutine(EnterRoom(obj));
+
+    }
+    public void GoToExames(bool[] newActives, float time)
+    {
+        StartCoroutine(GoToExamesAnim(newActives, time));
+    }
+    public void FinishAppointment()
+    {
+        StartCoroutine(FinishAppointmentAnim());
+    }
+    IEnumerator Wait(float i)
+    {
+        yield return new WaitForSeconds(i);
+        isWainting = false;
+    }
+    IEnumerator EnterRoom(Transform obj)
+    {
+        move.MoveRoom(true);
+        yield return new WaitForSeconds(move.animTime);
         fichaInstance = Instantiate(fichaTempalte, obj);
         Analyse analyse = fichaInstance.GetComponent<Analyse>();
         analyse.gm = gameManager;
         analyse.confirmButton.client = this;
         analyse.confirmButton.gameManager = gameManager;
-        analyse.ficha.Show(stats,activeCamps);
+        analyse.ficha.Show(stats, activeCamps);
         analyse.exames.client = this;
-        
     }
-    public void GoToExames(bool[] newActives,float time) 
+    IEnumerator FinishAppointmentAnim()
     {
-        isWainting = true;
-        int i = 0;
-		foreach (bool b in newActives) 
-        {
-			if (b) 
-            {
-                activeCamps[i] = b;
-            }
-            i++;
-        }
-		if (fichaInstance != null) 
-        { 
-            Destroy(fichaInstance);
-        }
-        StartCoroutine(Wait(time));
-        ExamQueue.instance.waitingClients.Add(this);
-        QueryQueue.instance.waitingClients.Remove(this);
-        QueryQueue.instance.ListUpdate();
-    }
-    public void FinishAppointment() 
-    {
+        move.MoveRoom(false);
         if (fichaInstance != null)
         {
             Destroy(fichaInstance);
-
         }
+        yield return new WaitForSeconds(move.animTime);
         ConfirmedQueue.instance.confirmdClients.Add(this);
         QueryQueue.instance.waitingClients.Remove(this);
         QueryQueue.instance.ListUpdate();
         ConfirmedQueue.instance.confirmdClients.Remove(this);
         Destroy(gameObject);
     }
-    IEnumerator Wait(float i) 
+    IEnumerator GoToExamesAnim(bool[] newActives, float time)
     {
-        yield return new WaitForSeconds(i);
-        isWainting = false;
-    }
-	private void OnDestroy()
-	{
-        
+        move.MoveRoom(false);
+        if (fichaInstance != null)
+        {
+            Destroy(fichaInstance);
+        }
+        yield return new WaitForSeconds(move.animTime);
+        isWainting = true;
+        int i = 0;
+        foreach (bool b in newActives)
+        {
+            if (b)
+            {
+                activeCamps[i] = b;
+            }
+            i++;
+        }
+        StartCoroutine(Wait(time));
+        ExamQueue.instance.waitingClients.Add(this);
+        QueryQueue.instance.waitingClients.Remove(this);
+        QueryQueue.instance.ListUpdate();
     }
 }

@@ -1665,7 +1665,7 @@ GameObject:
   - component: {fileID: 3529914361845143843}
   - component: {fileID: 4656990425768746726}
   m_Layer: 5
-  m_Name: LipidioY
+  m_Name: MoleculaZ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2946,7 +2946,7 @@ GameObject:
   - component: {fileID: 7718726667735408752}
   - component: {fileID: 3080130750436388091}
   m_Layer: 5
-  m_Name: MoleculaZ
+  m_Name: HormonioX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3962,7 +3962,7 @@ GameObject:
   - component: {fileID: 825829370060839326}
   - component: {fileID: 7254177280070920143}
   m_Layer: 5
-  m_Name: HormonioX
+  m_Name: LipidioY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4249,7 +4249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1728e45636f19374eaf7770d9976e29f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 41cc244c8b260de4390ed00687aef987, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
