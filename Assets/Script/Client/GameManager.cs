@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
-		pause = false;
+		maxStreak = PlayerPrefs.GetInt("ArtificeStreak");
+        maxError = PlayerPrefs.GetInt("ErrorLimit");
+        pause = false;
 		canvasAnalise.SetActive(true);
 		menu.SetActive(false);
 		gameOver = false;

@@ -11,6 +11,6 @@ public class StartGame : MonoBehaviour
 	public void StartGameButtom() 
 	{
 		PlayerPrefs.SetInt("ErrorLimit", (int)(errorsScroll.value * 10));
-		PlayerPrefs.SetInt("artificeStreak", (int)(artificesScroll.value * 10));
+		PlayerPrefs.SetInt("ArtificeStreak", (int)(artificesScroll.value * 10));
 	}
 }
