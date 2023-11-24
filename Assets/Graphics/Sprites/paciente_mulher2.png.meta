@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dbb15d534a88f1145bc59a2a38035842
+guid: 023a8cac89b300b479b755bcd0ec2745
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: paciente_homem1_0
+      name: paciente_mulher2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ff15ed898a6d50498fde49df8d5a519
-      internalID: 55759294
+      spriteID: 61942cadab074fb4aba2d8dbd1c66db9
+      internalID: -1643297781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paciente_homem1_1
+      name: paciente_mulher2_1
       rect:
         serializedVersion: 2
         x: 64
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7fae16256e8e8a4489f854cea23c2cb
-      internalID: 1394110204
+      spriteID: 9e0bd9c32ba104b4ea9f650b3732e55d
+      internalID: 1223698530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paciente_homem1_2
+      name: paciente_mulher2_2
       rect:
         serializedVersion: 2
         x: 128
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b388a96dd8cae1e4f8e3ce55a2ac16d8
-      internalID: -2068983893
+      spriteID: 48780e7335f44024a9ae0b942fc8f66b
+      internalID: -124395169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paciente_homem1_3
+      name: paciente_mulher2_3
       rect:
         serializedVersion: 2
         x: 0
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce433b24e2f8bd34587212afe1344216
-      internalID: -881817603
+      spriteID: 3c8e9b2939fac0041b517bfb5e60bc2b
+      internalID: 428059316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paciente_homem1_4
+      name: paciente_mulher2_4
       rect:
         serializedVersion: 2
         x: 64
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75ef2f8abdb94b840a7a9cb6fa6d91eb
-      internalID: 84892223
+      spriteID: 59a3e932341d968499ecbdacb3f9ebe8
+      internalID: -1528023636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paciente_homem1_5
+      name: paciente_mulher2_5
       rect:
         serializedVersion: 2
         x: 128
@@ -255,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9da32d95ee3ffe345a3e4c8a7d7fd887
-      internalID: 1956988949
+      spriteID: a9598e106df50244184bf512dd3063bb
+      internalID: 792822124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paciente_homem1_6
+      name: paciente_mulher2_6
       rect:
         serializedVersion: 2
         x: 0
@@ -276,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 923997b548bae314ebfa3836d96728a7
-      internalID: 2104826522
+      spriteID: 206d963d7a8444d4dbce97bbed0dae42
+      internalID: -2102653814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paciente_homem1_7
+      name: paciente_mulher2_7
       rect:
         serializedVersion: 2
         x: 64
@@ -297,20 +297,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbca1ca3915a2f64d9cc726348bef7f7
-      internalID: -770063976
+      spriteID: c3893275481b724408ef367cc7c58d23
+      internalID: 972539188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: paciente_homem1_8
+      name: paciente_mulher2_8
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 163
         width: 32
-        height: 29
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,8 +318,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d62078d700a9c34093a9c25763ee60a
-      internalID: -1614502383
+      spriteID: 219d2fc36de67cb4a81fdebc0f23d81b
+      internalID: -1949582530
       vertices: []
       indices: 
       edges: []
@@ -327,7 +327,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 967e9464d44b3e84a93cb65833320bbc
     internalID: 0
     vertices: []
     indices: 
@@ -335,15 +335,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      paciente_homem1_0: 55759294
-      paciente_homem1_1: 1394110204
-      paciente_homem1_2: -2068983893
-      paciente_homem1_3: -881817603
-      paciente_homem1_4: 84892223
-      paciente_homem1_5: 1956988949
-      paciente_homem1_6: 2104826522
-      paciente_homem1_7: -770063976
-      paciente_homem1_8: -1614502383
+      paciente_mulher2_0: -1643297781
+      paciente_mulher2_1: 1223698530
+      paciente_mulher2_2: -124395169
+      paciente_mulher2_3: 428059316
+      paciente_mulher2_4: -1528023636
+      paciente_mulher2_5: 792822124
+      paciente_mulher2_6: -2102653814
+      paciente_mulher2_7: 972539188
+      paciente_mulher2_8: -1949582530
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -35,12 +35,22 @@ public class Client : MonoBehaviour
             }
             n++;
         }
+        if (stats.gender == ClientStatsConst.GENDERS[0])
+        {
+            move.index = (float)Random.Range(2, 4);
+            move.changeSkin();
+        }
+        else
+        {
+            move.index = (float)Random.Range(0, 2); 
+            move.changeSkin();
+        }
     }
     public void Listner_onClientEnter(Transform obj)
     {
 
         StartCoroutine(EnterRoom(obj));
-
+       
     }
     public void GoToExames(bool[] newActives, float time)
     {
@@ -65,8 +75,11 @@ public class Client : MonoBehaviour
         analyse.gm = gameManager;
         analyse.confirmButton.client = this;
         analyse.confirmButton.gameManager = gameManager;
-        analyse.ficha.Show(stats, activeCamps);
+        analyse.ficha.Show(stats, activeCamps, (int)move.index);
         analyse.exames.client = this;
+        analyse.diseaseDropdownScript.ficha = analyse.ficha.camp;
+        analyse.aIButtonScript.gameManager = gameManager;
+        
     }
     IEnumerator FinishAppointmentAnim()
     {

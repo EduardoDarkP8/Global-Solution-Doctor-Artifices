@@ -80,11 +80,11 @@ public class ClientStatsConst
 
     public static string[] DISEASENAMES = { "Doença 1", "Doença 2", "Doença 3", "Doença 4" };
 
-    public static (int min, int max)[] ZMOLEC = {(7,15),(8,15),(4,6),(4,6)};
-
     public static (float min, float max)[] XHORMONIO = { (7f, 15f), (1f, 7f), (7f, 15f), (1, 15f) };
 
-    public static (int min, int max)[] YLIPIDIO = {(10000, 12000), (10000, 12000), (5000, 10000), (5000, 10000)};
+    public static (int min, int max)[] YLIPIDIO = { (10000, 12000), (10000, 12000), (5000, 10000), (5000, 10000) };
+
+    public static (int min, int max)[] ZMOLEC = {(7,15),(8,15),(4,6),(4,6)};
 
     public static (int min, int max)[] CARDIACFRENQUENCY = { (90, 110), (50, 90), (25, 50), (25, 50) };
 
@@ -96,12 +96,15 @@ public class ClientStatsConst
 
 	public static (string sin1, string sin2, string sin3)[] DISEASESSYMPTOMS = { (SYMPTOMS[7], SYMPTOMS[8], null), (SYMPTOMS[7], SYMPTOMS[8], null), (SYMPTOMS[5], null, null), (SYMPTOMS[5], null, null) };
 
-
-    public static string[] FEMININENAMES = { "Roberta", "Luiza", "Cleide" };
-
     public static string[] GENDERS = { "Feminino", "Masculino" };
 
-    public static string[] MASCULINENAMES = { "Carlos", "Pedro", "Wagner" };
+    public static string[] FEMININENAMES = { "Ana", "Beatriz", "Carla", "Daniela", "Eduarda", "Fernanda", "Gabriela", "Helena", "Isabela", "Juliana", "Karina", "Larissa", "Mariana", "Natália", "Olivia", "Patrícia", "Quitéria", "Renata", 
+                                             "Sabrina", "Tatiane", "Ursula", "Valentina", "Wanessa", "Ximena", "Yasmin", "Zuleika", "Amanda", "Bianca", "Camila", "Débora", "Elaine", "Flávia", "Gisele", "Heloísa", "Ivete", "Jéssica", "Kátia", 
+                                             "Lorena", "Mirella", "Natalie", "Odete", "Priscila", "Rafaela", "Sofia", "Thaís", "Ursulina", "Viviane", "Waleska", "Xuxa", "Yasmim", "Zara" };
+
+    public static string[] MASCULINENAMES = { "João","Lucas","Pedro","Mateus","Davi","Arthur","Bernardo","Heitor","Rafael","Miguel","Enzo","Ethan","Gabriel","Lucca","Benjamin","Nicolas","Guilherme","Gustavo","Murilo","Felipe","Samuel",
+                                              "Henrique","Lorenzo","Vinicius","Joaquim","Leonardo","Ryan","Ian","Antônio","Victor","Bruno","Carlos","Davi Lucas","Kaique","Patrick","Igor","Diego","Alexandre","Mateus Henrique","Gustavo Henrique",
+                                              "Enzo Gabriel","Luiz Miguel","Felipe","Lucas Gabriel","Pedro Henrique","Leonardo","Vinicius","Vicente","Eduardo","Fillipi" };
    
    
 }

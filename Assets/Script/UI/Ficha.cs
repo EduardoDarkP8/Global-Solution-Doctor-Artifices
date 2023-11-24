@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class Ficha : MonoBehaviour
 {
-    [SerializeField] Text[] camp = new Text[11];
-    
-    public void Show(ClientStats client, bool[] actives) 
+    public Text[] camp = new Text[11];
+    public Sprite[] faces;
+    public Image face;
+    public void Show(ClientStats client, bool[] actives, int faceIndex) 
     {
         
         camp[0].text = client.name;
@@ -36,6 +37,7 @@ public class Ficha : MonoBehaviour
             sintomasText += sintoma + " ";
         }
         camp[10].text = sintomasText;
-
+        face.sprite = faces[faceIndex];
     }
+    
 }

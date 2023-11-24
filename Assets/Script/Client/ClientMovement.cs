@@ -7,10 +7,11 @@ public class ClientMovement : MonoBehaviour
     [SerializeField]Animator animatorBody;
     [SerializeField]Animator animatorSprite;
     public float animTime;
-    void Start()
+    public float index;
+    public void changeSkin() 
     {
-        
-    }
+        animatorSprite.SetFloat("Index", index);
+    } 
     public void MoveRoom(bool enter) 
     {
         animatorBody.SetBool("Enter", enter);
@@ -25,6 +26,6 @@ public class ClientMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(animTime);
         walking = !walking;
-        animatorBody.SetBool("Walking",walking);
+        animatorSprite.SetBool("Walking",walking);
     }
 }

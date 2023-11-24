@@ -9,4 +9,5 @@ public class Analyse : MonoBehaviour
     public ConfirmButton confirmButton;
     public Exames exames;
     public GameManager gm;
+    public AIButtonScript aIButtonScript;
 }

@@ -11,12 +11,12 @@ public class ConfirmButton : MonoBehaviour
     {
         if (diseaseDropdownScript.GetItemText() == client.stats.diseaseName) 
         {
-            gameManager.UpdateConfirms(1);
+            gameManager.UpdateConfirms(1,1);
             client.FinishAppointment();
         }
 		else 
         {
-            gameManager.UpdateWrongs(1);
+            gameManager.UpdateWrongs(1,true);
             client.FinishAppointment();
         }
     }
