@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+	[SerializeField] AudioSource audioSource;
+	[SerializeField] AudioClip[] audios;
 	[SerializeField] Text timer;
     [SerializeField] Text confirmsText;
     [SerializeField] Text wrongsText;
@@ -21,16 +23,22 @@ public class Score : MonoBehaviour
 	private void GameManager_OnArtifice(int i)
 	{
 		artificiosText.text = "Artificios: " + i.ToString();
+		audioSource.clip = audios[0];
+		audioSource.Play();
 	}
 
 	private void Instance_OnWrong(int i)
 	{
 		wrongsText.text = "Erros: " + i.ToString();
+		audioSource.clip = audios[1];
+		audioSource.Play();
 	}
 
 	private void Instance_OnConfirm(int i)
 	{
 		confirmsText.text = "Acertos: " + i.ToString();
+		audioSource.clip = audios[2];
+		audioSource.Play();
 	}
 
 	// Update is called once per frame
