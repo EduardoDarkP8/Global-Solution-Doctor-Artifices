@@ -2,14 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 	public GameObject canvasAnalise;
 	public GameObject menu;
 	public GameObject gameOverMenu;
 	bool pause;
-	public int corfims;
+	bool gameOver;
+	public int confirms;
     public int wrongs;
 	public int artifices;
 	int streak;
@@ -19,10 +20,11 @@ public class GameManager : MonoBehaviour
 	public event Action<int> OnConfirm;
 	public event Action<int> OnWrong;
 	public event Action<int> OnArtifice;
+	public Text points;
 	
 	private void Update()
 	{
-		if (!pause) 
+		if (!pause && !gameOver) 
 		{ 
 			timer += Time.deltaTime;
 		}
@@ -34,18 +36,18 @@ public class GameManager : MonoBehaviour
 	}
 	public void UpdateConfirms(int i,int streakAdd)
 	{
-		corfims += i;
+		confirms += i;
 		streak += streakAdd;
 		if (streak >= maxStreak) 
 		{
 			streak = 0;
 			UpdateArtifices(1);
 		}
-		if (corfims%5 == 0) 
+		if (confirms%5 == 0) 
 		{
 			UpdateWrongs(-1,false);
 		}
-		OnConfirm.Invoke(corfims);
+		OnConfirm.Invoke(confirms);
 	}
 	public void UpdateWrongs(int i,bool finishStreak)
 	{
@@ -54,24 +56,42 @@ public class GameManager : MonoBehaviour
 		{ 
 			streak = 0;
 		}
+		if (wrongs >= maxError) 
+		{
+			GameOver();
+		}
 		OnWrong.Invoke(wrongs);
 	}
 	public void GameOver() 
 	{
-		pause = true;
+		gameOver = true;
 		canvasAnalise.SetActive(false);
 		gameOverMenu.SetActive(true);
+		points.text = "Pontos: " + ((int)((confirms * 100) / timer)).ToString();
 	}
 	public void Pause() 
 	{
-		pause = true;
-		canvasAnalise.SetActive(false);
-		menu.SetActive(true);
+		if (!pause && !gameOver) 
+		{
+			if (Input.GetButtonDown("Pause"))
+			{
+				pause = true;
+				canvasAnalise.SetActive(false);
+				menu.SetActive(true);
+			}
+		}
 	}
-	public void UnPause() 
+	public void UnPause()
 	{
-		pause = false;
-		canvasAnalise.SetActive(true);
-		menu.SetActive(false);
+		if (pause && !gameOver)
+		{
+			if (Input.GetButtonDown("Pause")) 
+			{ 
+				pause = false;
+				canvasAnalise.SetActive(true);
+				menu.SetActive(false);
+			}
+
+		}
 	}
 }

@@ -38,6 +38,7 @@ public class Score : MonoBehaviour
     {
 		int seconds = (int)gameManager.timer%60;
 		int min = (int)gameManager.timer/60;
-		timer.text = min.ToString() + ":" + seconds.ToString();  
+		timer.text = string.Format("{0:00}:{1:00}",min, seconds);
+			  
     }
 }
