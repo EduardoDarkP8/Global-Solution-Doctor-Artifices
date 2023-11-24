@@ -21,13 +21,27 @@ public class GameManager : MonoBehaviour
 	public event Action<int> OnWrong;
 	public event Action<int> OnArtifice;
 	public Text points;
-	
+
+	private void Start()
+	{
+		pause = false;
+		canvasAnalise.SetActive(true);
+		menu.SetActive(false);
+		gameOver = false;
+		gameOverMenu.SetActive(false);
+		Time.timeScale = 1;
+	}
 	private void Update()
 	{
 		if (!pause && !gameOver) 
 		{ 
 			timer += Time.deltaTime;
 		}
+		if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("Pause")) 
+		{ 
+			Pause();
+		}
+		
 	}
 	public void UpdateArtifices(int i)
 	{
@@ -64,6 +78,7 @@ public class GameManager : MonoBehaviour
 	}
 	public void GameOver() 
 	{
+		Time.timeScale = 0f;
 		gameOver = true;
 		canvasAnalise.SetActive(false);
 		gameOverMenu.SetActive(true);
@@ -73,25 +88,21 @@ public class GameManager : MonoBehaviour
 	{
 		if (!pause && !gameOver) 
 		{
-			if (Input.GetButtonDown("Pause"))
-			{
 				pause = true;
 				canvasAnalise.SetActive(false);
 				menu.SetActive(true);
-			}
+				Time.timeScale = 0f;
 		}
-	}
-	public void UnPause()
-	{
-		if (pause && !gameOver)
+		else if (pause && !gameOver)
 		{
-			if (Input.GetButtonDown("Pause")) 
-			{ 
-				pause = false;
-				canvasAnalise.SetActive(true);
-				menu.SetActive(false);
-			}
-
+			pause = false;
+			canvasAnalise.SetActive(true);
+			menu.SetActive(false);
+			Time.timeScale = 1;
 		}
+
 	}
+
+
+
 }
